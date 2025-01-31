@@ -24,28 +24,32 @@ The final solution reads logs **line by line** to avoid memory overflow. It chec
 Make sure you have GCC with C++20 support installed:
 
 ### Linux/macOS:
+```bash
 sudo apt install g++   # Ubuntu/Debian  
-brew install gcc       # macOS  
+brew install gcc       # macOS
+```
 ### Windows:
 Install MinGW or use WSL.
 
 ## 2 Download the log files 
 
 Run the following command inside the src/ directory:
- 
+ ```curl
 curl -L -o test_logs.log "https://limewire.com/d/0c95044f-d489-4101-bf1a-ca48839eea86#cVKnm0pKXpN6pjsDwav4f5MNssotyy0C8Xvaor1bA5U"
-
+```
 ## 3 Compile the Code
 
 Run the following command inside the src/ directory:
-
+```bash
 g++ -std=c++20 extract_logs.cpp -o extract_logs
-
+```
 # 4 Run the Program
+```txt
 ./extract_logs YYYY-MM-DD
 Example: ./extract_logs 2024-12-01
-
+```
 # 5 Check Output
-
+```txt
 Logs are saved in the output/ folder:
 output/output_2024-12-01.txt
+```
