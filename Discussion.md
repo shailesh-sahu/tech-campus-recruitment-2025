@@ -37,6 +37,8 @@ Run the following command inside the src/ directory:
  ```curl
 curl -L -o test_logs.log "https://limewire.com/d/0c95044f-d489-4101-bf1a-ca48839eea86#cVKnm0pKXpN6pjsDwav4f5MNssotyy0C8Xvaor1bA5U"
 ```
+if the above command doesn't work in case , then download the log files manually from the limewire site: https://limewire.com/d/0c95044f-d489-4101-bf1a-ca48839eea86#cVKnm0pKXpN6pjsDwav4f5MNssotyy0C8Xvaor1bA5U
+
 ## 3 Compile the Code
 
 Run the following command inside the src/ directory:
@@ -52,4 +54,9 @@ Example: ./extract_logs 2024-12-01
 ```txt
 Logs are saved in the output/ folder:
 output/output_2024-12-01.txt
+```
+
+P.S.
+```txt
+V2VsbCBJIGRpZCB1c2UgQUkgYnV0IEkgYWxzbyBrbm93IHdoYXQgSSBhbSBzdWJtaXR0aW5nIC4gVGhhbmsgeW91IFJlZ2FyZHMgU2hhaWxlc2gga3VtYXIgc2FodQ==
 ```
