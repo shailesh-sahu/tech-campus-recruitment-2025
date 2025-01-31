@@ -1,46 +1,51 @@
 # Solutions Considered
 
 ### Approach 1: Load Full File into Memory
-Pros: Easy to implement.
-Cons: Not feasible for a 1TB file (will cause memory overflow).
+- **Pros**: Easy to implement.
+- **Cons**: Not feasible for a 1TB file (will cause memory overflow).
 
 ### Approach 2:  Using Indexed Binary Search (Not used)
-Pros: Faster if an index file exists.
-Cons: Requires pre-built index and is complex.
+- **Pros**: Faster if an index file exists.
+- **Cons**: Requires pre-built index and is complex.
 
 ### Approach 3: Line-by-Line Streaming with getline() (Final Choice)
-Pros: Efficient, low memory usage.
-Cons: Slightly slower than in-memory approaches but scalable.
+- **Pros**: Efficient, low memory usage.
+- **Cons**: Slightly slower than in-memory approaches but scalable.
 
 ## Final Solution Summary
-The final solution reads logs line by line to avoid memory overflow. It checks whether each line starts with the given date and writes matching logs to an output file.
+The final solution reads logs **line by line** to avoid memory overflow. It checks whether each line starts with the given date and writes matching logs to an output file.
 
-- Uses rfind(date, 0) == 0 for efficient prefix checking.
-- Creates an output directory (output/) dynamically. 
-- Deletes the output file if no logs are found to prevent empty files.
-
+- **Efficient prefix checking**: Uses `rfind(date, 0) == 0` for checking if the line starts with the given date.
+- **Dynamic output directory creation**: Creates the `output/` directory if it doesn't exist.
+- **Prevents empty files**: Deletes the output file if no logs match the given date.
 # Steps to Run
 
-1️ Install Dependencies
+## 1️ Install Dependencies
 Make sure you have GCC with C++20 support installed:
 
-# Linux/macOS:
+### Linux/macOS:
 sudo apt install g++   # Ubuntu/Debian  
 brew install gcc       # macOS  
-# Windows:
+### Windows:
 Install MinGW or use WSL.
 
-# 2️ Compile the Code
+## 2 Download the log files 
+
+Run the following command inside the src/ directory:
+ 
+curl -L -o test_logs.log "https://limewire.com/d/0c95044f-d489-4101-bf1a-ca48839eea86#cVKnm0pKXpN6pjsDwav4f5MNssotyy0C8Xvaor1bA5U"
+
+## 3 Compile the Code
 
 Run the following command inside the src/ directory:
 
 g++ -std=c++20 extract_logs.cpp -o extract_logs
 
-# 3️ Run the Program
+# 4 Run the Program
 ./extract_logs YYYY-MM-DD
 Example: ./extract_logs 2024-12-01
 
-# 4️ Check Output
+# 5 Check Output
 
 Logs are saved in the output/ folder:
 output/output_2024-12-01.txt
